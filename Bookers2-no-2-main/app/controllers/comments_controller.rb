@@ -11,7 +11,8 @@ def create
 end
 
 def destroy
-
+  Comment.find_by(id:prams[:id]).destroy
+  redirect_to 
 end
 
 private
