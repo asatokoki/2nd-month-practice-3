@@ -51,6 +51,7 @@
         <td>
           <p>コメント件数：<%= @post.comments.count %></p>
           <% @post.comments.each do |comment| %>
+            <%= attachment_image_tag comment.user, :profile_image, :fill, 60, 60, fallback: "img_7c62aaccd6714ba4a1fedfaf0d5702c3142297.jpg", size: "100x100" %>
             <!--<p><%= image_tag('img_7c62aaccd6714ba4a1fedfaf0d5702c3142297.jpg') %>ここは後で修正しなければですね</p>-->
             <%= comment.user.name %>
             <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
