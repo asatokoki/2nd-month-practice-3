@@ -24,7 +24,7 @@ def show
     @post = Book.find(params[:id])
     @user = @post.user
     @book = Book.new
-    @comment = Comment.new
+    @comment = BookComment.new
 end
 
 

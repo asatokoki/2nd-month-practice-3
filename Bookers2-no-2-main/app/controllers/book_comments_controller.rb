@@ -1,8 +1,8 @@
-class CommentsController < ApplicationController
+class BookCommentsController < ApplicationController
 
 def create
     @book = Book.find(params[:book_id])
-    @comment = Comment.new(comment_params)
+    @comment = BookComment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.book_id = @book.id
     @comment.save
@@ -11,14 +11,14 @@ def create
 end
 
 def destroy
-  Comment.find_by(id:prams[:id]).destroy
-  redirect_to 
+  BookComment.find_by(id:prams[:id]).destroy
+  redirect_to
 end
 
 private
 
 def comment_params
-  params.require(:comment).permit(:comment)
+  params.require(:book_comment).permit(:comment)
 end
 
 end
