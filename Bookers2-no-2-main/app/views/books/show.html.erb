@@ -55,6 +55,11 @@
             <!--<p><%= image_tag('img_7c62aaccd6714ba4a1fedfaf0d5702c3142297.jpg') %>ここは後で修正しなければですね</p>-->
             <%= book_comment.user.name %>
             <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= book_comment.comment %>
+            <% if book_comment.user == current_user %>
+  <div>
+    <%= link_to "削除", book_book_comment_path(@post, book_comment), method: :delete %>
+  </div>
+  <% end %>
           <% end %>
         </td>
         <td>
