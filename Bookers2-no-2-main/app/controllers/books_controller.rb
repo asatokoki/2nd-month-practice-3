@@ -17,7 +17,7 @@ def index
     @books = Book.all
     @book = Book.new
     @user = current_user
-
+    # @post = Book.find(params[:id])
 end
 
 def show

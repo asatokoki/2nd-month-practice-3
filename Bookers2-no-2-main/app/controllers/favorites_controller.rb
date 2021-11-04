@@ -13,6 +13,7 @@ def create
     post = Book.find(params[:book_id])
     # favorite = current_user.favorites.new(bookid: book.id)
     favorite = current_user.favorites.new(book_id: post.id)
+    
     favorite.save
     redirect_to book_path(post)
 end
