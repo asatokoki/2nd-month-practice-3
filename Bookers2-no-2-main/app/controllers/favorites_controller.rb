@@ -13,9 +13,9 @@ def create
     post = Book.find(params[:book_id])
     # favorite = current_user.favorites.new(bookid: book.id)
     favorite = current_user.favorites.new(book_id: post.id)
-    
+
     favorite.save
-    redirect_to book_path(post)
+    redirect_to request.referer
 end
 
 def destroy
@@ -23,7 +23,7 @@ def destroy
     post = Book.find(params[:book_id])
     favorite = current_user.favorites.find_by(book_id: post.id)
     favorite.destroy
-    redirect_to book_path(post)
+    redirect_to request.referer
 end
 
 
